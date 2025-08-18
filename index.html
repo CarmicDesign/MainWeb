@@ -858,20 +858,16 @@ setStatus('ok', "Message sent. I’ll get back to you soon!");
 // on error:
 setStatus('err', body?.error || `Failed to send (${res.status}). Please try again.`);
 
-/* Theme tweaks */
-#content.dark-mode #home-contact-status { color: #eadeda; }
+/* Base theming */
+html.dark-mode  { background: #0b0b0c; color: #e6e6e6; }
+html.light-mode { background: #ffffff; color: #111827; }
 
-/* Optional state colors */
-#home-contact-status.info { color: #6b7280; }   /* neutral */
-#home-contact-status.ok   { color: #16a34a; }   /* green */
-#home-contact-status.err  { color: #f90043; }   /* red */
+/* Your previous selectors, but rooted on html */
+html.dark-mode  #home-contact-status:not(.info):not(.ok):not(.err) { color: #eadeda; }
+#home-contact-status.info { color: #6b7280; }
+#home-contact-status.ok   { color: #16a34a; }
+#home-contact-status.err  { color: #f90043; }
 
-/* Only use the dark base when no state class is present */
-#content.dark-mode #home-contact-status:not(.info):not(.ok):not(.err){ color:#eadeda; }
-
-#content.dark-mode #home-contact-status.info { color: #6b7280; }
-#content.dark-mode #home-contact-status.ok   { color: #16a34a; }
-#content.dark-mode #home-contact-status.err  { color: #f90043; }
 
 
 </style>
@@ -1452,56 +1448,47 @@ I bring value through designs." class="image-80" />
     <script src="js/jquery.js" type="text/javascript"></script>
     <script src="js/webflow-script.js" type="text/javascript"></script>
 
-    <script defer>
-  (function () {
-    const ROOT_ID = 'content';
-    const SWITCH_ID = 'toggleTheme';
-    const COOKIE_NAME = 'theme';
+   <script>
+(function () {
+  const ROOT = document.documentElement; // <html>
+  const SWITCH_ID = 'toggleTheme';
+  const COOKIE = 'theme';
 
-    function getEl(id){ return document.getElementById(id); }
+  function readTheme() {
+    return (document.cookie.match(/(?:^|;\s*)theme=(dark|light)\b/i)?.[1] || 'light').toLowerCase();
+  }
+  function writeTheme(theme) {
+    document.cookie = `${COOKIE}=${theme}; max-age=31536000; path=/; SameSite=Lax`;
+  }
+  function applyTheme(theme) {
+    ROOT.classList.toggle('dark-mode',  theme === 'dark');
+    ROOT.classList.toggle('light-mode', theme === 'light');
+    const sw = document.getElementById(SWITCH_ID);
+    if (sw) sw.checked = (theme === 'dark');
+  }
+  function toggleTheme() {
+    const next = ROOT.classList.contains('dark-mode') ? 'light' : 'dark';
+    applyTheme(next);
+    writeTheme(next);
+  }
 
-    function readThemeCookie() {
-      const m = document.cookie.match(/(?:^|;\s*)theme=(dark|light)\b/i);
-      return m ? m[1].toLowerCase() : null;
+  function init() {
+    applyTheme(readTheme());
+    const sw = document.getElementById(SWITCH_ID);
+    if (sw && !sw.dataset._themeBound) {
+      sw.addEventListener('change', toggleTheme);
+      sw.dataset._themeBound = '1';
     }
+  }
 
-    function writeThemeCookie(theme) {
-      // 1 year, path=/ so it works on all pages
-      document.cookie = `${COOKIE_NAME}=${theme}; max-age=31536000; path=/; SameSite=Lax`;
-    }
-
-    function applyTheme(theme) {
-      const root = getEl(ROOT_ID);
-      if (!root) return; // page might not have #content
-      root.classList.toggle('dark-mode', theme === 'dark');
-      root.classList.toggle('light-mode', theme === 'light');
-    }
-
-    function setThemeFromCookie() {
-      const theme = readThemeCookie() || 'light';
-      applyTheme(theme);
-      const sw = getEl(SWITCH_ID);
-      if (sw) sw.checked = (theme === 'dark');
-    }
-
-    function toggleTheme() {
-      const root = getEl(ROOT_ID);
-      if (!root) return;
-      const next = root.classList.contains('dark-mode') ? 'light' : 'dark';
-      applyTheme(next);
-      writeThemeCookie(next);
-      const sw = getEl(SWITCH_ID);
-      if (sw) sw.checked = (next === 'dark');
-    }
-
-    // init after DOM is parsed (because of `defer`) 
-    document.addEventListener('DOMContentLoaded', () => {
-      setThemeFromCookie();
-      const sw = getEl(SWITCH_ID);
-      if (sw) sw.onchange = toggleTheme;
-    });
-  })();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
 </script>
+
 
 
 <script>
