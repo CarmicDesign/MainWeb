@@ -693,72 +693,6 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="js/script.js"></script>
 </head>
-    
-<form id="contact-form">
-  <label>
-    Name
-    <input type="text" name="name" required />
-  </label>
-  <label>
-    Email
-    <input type="email" name="email" required />
-  </label>
-  <label>
-    Message
-    <textarea name="message" rows="6" required></textarea>
-  </label>
-
-  <!-- Honeypot (hidden) -->
-  <input type="text" name="company" style="display:none" tabindex="-1" autocomplete="off" />
-
-  <button type="submit">Send</button>
-  <p id="contact-status" aria-live="polite"></p>
-</form>
-
-<script>
-  const FORM_URL = "PASTE_YOUR_LAMBDA_FUNCTION_URL_HERE"; // e.g. https://abcde.lambda-url.ap-southeast-2.on.aws/
-
-  const form = document.getElementById("contact-form");
-  const statusEl = document.getElementById("contact-status");
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    statusEl.textContent = "Sending…";
-
-    const formData = new FormData(form);
-    // honeypot check
-    if ((formData.get("company") || "").trim() !== "") {
-      statusEl.textContent = "Thanks!"; // silently ignore bots
-      form.reset();
-      return;
-    }
-
-    const payload = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      message: formData.get("message")
-    };
-
-    try {
-      const res = await fetch(FORM_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
-
-      const body = await res.json().catch(() => ({}));
-
-      if (res.ok && body.ok) {
-        statusEl.textContent = "Message sent. I’ll get back to you soon!";
-        form.reset();
-      } else {
-        statusEl.textContent = body?.error || "Failed to send. Please try again later.";
-      }
-    } catch (err) {
-      statusEl.textContent = "Network error. Please try again.";
-    }
-  });
-</script>
 
 <body class="body">
     <div data-w-id="2529adc4-2686-c49b-cf1d-148873c7c605" class="contact">
@@ -1103,6 +1037,74 @@
                 </div>
             </div>
         </div>
+
+        <form id="contact-form">
+  <label>
+    Name
+    <input type="text" name="name" required />
+  </label>
+  <label>
+    Email
+    <input type="email" name="email" required />
+  </label>
+  <label>
+    Message
+    <textarea name="message" rows="6" required></textarea>
+  </label>
+
+  <!-- Honeypot (hidden) -->
+  <input type="text" name="company" style="display:none" tabindex="-1" autocomplete="off" />
+
+  <button type="submit">Send</button>
+  <p id="contact-status" aria-live="polite"></p>
+</form>
+
+<script>
+  const FORM_URL = "PASTE_YOUR_LAMBDA_FUNCTION_URL_HERE"; // e.g. https://abcde.lambda-url.ap-southeast-2.on.aws/
+
+  const form = document.getElementById("contact-form");
+  const statusEl = document.getElementById("contact-status");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    statusEl.textContent = "Sending…";
+
+    const formData = new FormData(form);
+    // honeypot check
+    if ((formData.get("company") || "").trim() !== "") {
+      statusEl.textContent = "Thanks!"; // silently ignore bots
+      form.reset();
+      return;
+    }
+
+    const payload = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message")
+    };
+
+    try {
+      const res = await fetch(FORM_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
+      const body = await res.json().catch(() => ({}));
+
+      if (res.ok && body.ok) {
+        statusEl.textContent = "Message sent. I’ll get back to you soon!";
+        form.reset();
+      } else {
+        statusEl.textContent = body?.error || "Failed to send. Please try again later.";
+      }
+    } catch (err) {
+      statusEl.textContent = "Network error. Please try again.";
+    }
+  });
+</script>
+
+        
         <div class="beforetimelinebg"></div>
         <footer class="footer">
             <div class="footercontainer w-container">
