@@ -692,27 +692,26 @@
     <script type="text/javascript" src="js/script.js"></script>
 
 <style id="contact-glass-styles">
-/* Center like your .ty-wrapper */
-.contact-ty-section .ty-wrapper {
-  display:flex; justify-content:center;
+/* Section spacing (adds gap above footer, esp. on mobile) */
+.contact-ty-section { padding: 64px 0; }
+@media (max-width: 767px){
+  .contact-ty-section { padding: 48px 0 96px; } /* big bottom gap on phones */
 }
 
-/* Independent glass card (no .ty-card = no flip/hover/click cursor) */
-.glass-card {
+/* Center like your .ty-wrapper */
+.contact-ty-section .ty-wrapper { display:flex; justify-content:center; }
+
+/* Independent glass card */
+.glass-card{
   width: min(720px, 92%);
   margin: 0 auto;
   border-radius: 24px;
-
-  /* glassmorphism */
   background: rgba(255,255,255,0.12);
   border: 1px solid rgba(255,255,255,0.22);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-
   padding: 24px 24px 28px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.20);
-
-  /* kill any inherited 3D/hover behaviors just in case */
   transform: none !important;
   perspective: initial !important;
 }
@@ -732,7 +731,7 @@
 .glass-card, .glass-card * { cursor: default !important; }
 .glass-card button, .glass-card .w-button { cursor: pointer !important; }
 
-/* Title: smaller than .ty, with gradient on the word "touch" like your Speak */
+/* Title smaller with gradient word */
 .contact-title{
   font-weight:700;
   line-height:1.2;
@@ -740,25 +739,39 @@
   font-size: clamp(22px, 4vw, 28px);
 }
 
-/* Inputs */
+/* Labels */
 .glass-card .label{ display:block; margin:12px 0 6px; }
+
+/* Inputs – higher contrast so fields pop */
 .glass-card .contact-input{
   width:100% !important; max-width:100% !important; display:block; box-sizing:border-box;
-  color:inherit;
-  background: rgba(255,255,255,0.10);
-  border:1px solid rgba(255,255,255,0.25);
+  color: inherit;
+  background: rgba(255,255,255,0.18);          /* default boost */
+  border: 1px solid rgba(255,255,255,0.45);    /* clearer edge */
   border-radius:14px;
   padding:12px 14px;
   outline:none;
   transition: border-color .2s, background .2s, box-shadow .2s;
 }
+
+/* Even brighter in light mode; a touch darker in dark mode */
 #content.light-mode .glass-card .contact-input{
-  background: rgba(255,255,255,0.35);
-  border-color: rgba(49,49,89,0.18);
+  background: rgba(255,255,255,0.65);
+  border-color: rgba(49,49,89,0.28);
 }
+#content.dark-mode .glass-card .contact-input{
+  background: rgba(255,255,255,0.14);
+  border-color: rgba(255,255,255,0.38);
+}
+
+/* Placeholder visibility */
+.glass-card .contact-input::placeholder{ color: rgba(0,0,0,0.55); }
+#content.dark-mode .glass-card .contact-input::placeholder{ color: rgba(255,255,255,0.75); }
+
+/* Focus ring */
 .glass-card .contact-input:focus{
-  border-color: rgba(255,255,255,0.55);
-  box-shadow: 0 0 0 3px rgba(255,255,255,0.18) inset;
+  border-color: rgba(255,255,255,0.85);
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.22) inset, 0 0 0 2px rgba(255,255,255,0.18);
 }
 
 /* Button */
@@ -774,11 +787,12 @@
   position:absolute !important; left:-9999px !important; width:1px !important; height:1px !important; overflow:hidden !important;
 }
 
-/* Mobile padding */
+/* Mobile padding inside card */
 @media (max-width: 767px){
   .glass-card{ padding:20px 16px 24px; }
 }
 </style>
+
 
     
 </head>
@@ -1285,9 +1299,9 @@ I bring value through designs." class="image-80" />
     <div class="containerspaced">
       <div class="ty-wrapper">
         <div class="glass-card" role="form" aria-labelledby="home-contact-title">
-          <h2 id="home-contact-title" class="contact-title">
-            Get in <span class="h1b">touch</span>
-          </h2>
+          <h2 id="home-contact-title" class="contact-title h1b">
+              Get in touch
+            </h2>
 
           <form id="home-contact-form" class="w-form" novalidate>
             <label for="hc-name" class="label">Your Name</label>
