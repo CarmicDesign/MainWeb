@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html data-wf-page="640903c036b65f114a3a5c3a" data-wf-site="640903c036b65f1a203a5c3b" data-wf-status="1">
+<html data-wf-page="640903c036b65f63fa3a5cf9" data-wf-site="640903c036b65f1a203a5c3b" data-wf-status="1">
 
 <head>
     <meta charset="utf-8" />
-    <title>Carmic Design Digital Portfolio</title>
+    <title>Me</title>
+    <meta content="Me" property="og:title" />
+    <meta content="Me" property="twitter:title" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Webflow" name="generator" />
     <link href="css/webflow-style.css" rel="stylesheet" type="text/css" />
@@ -688,8 +690,13 @@
             opacity: .8;
         }
     </style>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/script.js"></script>
 
-/* Match .ty-card sizing/centering context */
+<style id="contact-ty-styles">
+/* —— Contact card styled to match .ty-card (glass, same footprint) —— */
+
+/* Center like your .ty-wrapper */
 .contact-ty-section .ty-wrapper {
   display: flex;
   justify-content: center;
@@ -697,7 +704,7 @@
 
 /* Glass card look to match your Thank You card */
 .ty-card.contact-card {
-  /* sizing to mirror typical .ty-card footprint */
+  /* try to mirror .ty-card sizing/spacing */
   width: min(720px, 92%);
   margin: 0 auto;
   border-radius: 24px;
@@ -708,15 +715,14 @@
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 
-  /* internal spacing similar to your cards */
   padding: 24px 24px 28px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.20);
 }
 
 /* Respect site theme */
 #content.light-mode .ty-card.contact-card {
-  background: rgba(234, 222, 218, 0.18);            /* subtle warm tint like your palette */
-  border-color: rgba(49, 49, 89, 0.18);
+  background: rgba(234, 222, 218, 0.18);
+  border-color: rgba(49,49,89,0.18);
   box-shadow: 0 8px 24px rgba(49,49,89,0.12);
 }
 #content.dark-mode .ty-card.contact-card {
@@ -724,11 +730,11 @@
   border-color: rgba(255,255,255,0.16);
 }
 
-/* Inputs: glassy, full-width, consistent spacing */
 .ty-card.contact-card .label {
   display:block;
   margin: 12px 0 6px;
 }
+
 .ty-card.contact-card .contact-input {
   width: 100% !important;
   max-width: 100% !important;
@@ -773,20 +779,19 @@
 @media (max-width: 767px) {
   .ty-card.contact-card { padding: 20px 16px 24px; }
 }
+</style>
 
     
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="js/script.js"></script>
 </head>
 
-<body data-w-id="5f22b6130e71bc283a4b658c" class="body">
+<body class="body">
     <div data-w-id="2529adc4-2686-c49b-cf1d-148873c7c605" class="contact">
         <div class="container w-container">
             <div data-w-id="2529adc4-2686-c49b-cf1d-148873c7c607" class="contactbg">
                 <div class="form-block w-form">
                     <form id="email-form" name="email-form" data-name="Email Form"
                         action="https://docs.google.com/spreadsheets/d/1R6uLcV9gRC0ja3wQSPLQrS2crt0RQLWNcIe5Z5UHzRA/edit?usp=sharing"
-                        method="post" data-wf-page-id="640903c036b65f114a3a5c3a"
+                        method="post" data-wf-page-id="640903c036b65f63fa3a5cf9"
                         data-wf-element-id="2529adc4-2686-c49b-cf1d-148873c7c609">
                         <div data-w-id="2529adc4-2686-c49b-cf1d-148873c7c60a" class="close">close</div><label
                             for="name-3" class="labeltitle">Contact Me</label><label for="name-3" class="label">Your
@@ -819,462 +824,309 @@
             </div>
         </div>
     </div>
-    <div class="bodywrap">
-        <div id="Profile" class="section">
+    <nav class="navbg">
+        <div class="navbluefrost"></div>
+        <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease"
+            role="banner" class="mainnav w-nav">
+            <div class="navwrapper"><a href="index.html" class="brand w-inline-block"></a>
+                <nav role="navigation" class="nav-menu-3 w-nav-menu"><a href="index.html"
+                        class="mainlink-2 w-nav-link">Home</a><a href="projects.html"
+                        class="mainlink-2 w-nav-link">Projects</a><a href="me.html" aria-current="page"
+                        class="mainlink-2 w-nav-link w--current">Me</a><a href="#"
+                        data-w-id="b847f6fd-fdbd-0ec4-ca16-465ae0d6819d" class="mainlink-2 w-nav-link">Contact</a></nav>
+                <div class="menu-button-2 w-nav-button">
+                    <div class="icon-4 w-icon-nav-menu"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="contact">
+        <div class="container w-container">
+            <div class="contactbg">
+                <div class="w-form">
+                    <form id="email-form" name="email-form" data-name="Email Form"
+                        action="https://docs.google.com/spreadsheets/d/1R6uLcV9gRC0ja3wQSPLQrS2crt0RQLWNcIe5Z5UHzRA/edit?usp=sharing"
+                        method="post" data-wf-page-id="640903c036b65f63fa3a5cf9"
+                        data-wf-element-id="539199be-1b90-e3bf-fa71-699eb426e812">
+                        <div data-w-id="539199be-1b90-e3bf-fa71-699eb426e813" class="close">close</div><label
+                            for="name-2" class="labeltitle">Contact Me</label><label for="name-2" class="label">Your
+                            Name</label><input class="textinput w-input" autofocus="true" maxlength="256" name="name-2"
+                            data-name="Name 2" placeholder="Enter your full name" type="text" id="name-2"
+                            required="" /><label for="email-2" class="label">Email Address</label><input
+                            class="textinput w-input" maxlength="256" name="email-2" data-name="Email 2"
+                            placeholder="Enter your email address" type="email" id="email-2" required="" /><label
+                            for="message-2" class="label">Message</label><textarea id="message-2" name="message-2"
+                            maxlength="5000" data-name="Message 2" placeholder="Enter your message here" required=""
+                            class="textarea w-input"></textarea><input type="submit" data-wait="Hold please!"
+                            class="submit-button w-button" value="Engage!" />
+                    </form>
+                    <div class="success-message w-form-done">
+                        <div class="div-block-22"><img src="images/tickglowdark.svg" loading="lazy" alt="" /></div>
+                        <h1 class="heading-2">Thank You!</h1>
+                        <div>Your submission has been received! will get back to you shortly.</div>
+                    </div>
+                    <div class="error-message w-form-fail">
+                        <div>Oops! Something went wrong while sending your message, please try again.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pagewrapper">
+        <div class="nav-section">
             <div class="container w-container">
-                <div class="profilepicbox"><img src="images/picture-202.png" loading="lazy"
-                        sizes="(max-width: 479px) 27vw, (max-width: 991px) 24vw, 225.59375px"
-                        srcset="images/picture-25202-p-500.png 500w, images/picture-202.png 521w" alt=""
-                        class="hero-image" />
-                    <div class="introtextwrapper"><img src="images/herotext2.svg" loading="lazy" alt="Hi, I&#x27;m Karma Tshering
-I bring value through designs." class="image-80" />
-                        <div class="lottie-animation-4" data-w-id="aecbdf99-b07f-71f8-0dd5-6bbe01c7ec3f"
-                            data-animation-type="lottie" data-src="images/herotextchangev2.json" data-loop="1"
-                            data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg"
-                            data-default-duration="10" data-duration="0"></div>
-                    </div>
-                    <div class="frostedbg"></div>
+                <div class="navbar2"><a data-w-id="0c1fd092-965d-b08e-587c-f2013d644fad" href="index.html"
+                        class="brand-2 w-inline-block"><img src="images/logoskeleton.svg" loading="lazy"
+                            alt="Carmic Design logo" class="navlogo" /></a>
+                    <div class="rightwrap"><a data-w-id="0c1fd092-965d-b08e-587c-f2013d644fb0" href="projects.html"
+                            class="navbox w-inline-block">
+                            <div class="nav-link">
+                                <div class="nav-text">Projects</div>
+                                <div class="underline"></div>
+                            </div>
+                            <div class="navicon"></div>
+                        </a><a data-w-id="0c1fd092-965d-b08e-587c-f2013d644fb6" href="me.html" aria-current="page"
+                            class="navbox w-inline-block w--current">
+                            <div class="nav-link">
+                                <div class="nav-text">Me</div>
+                                <div class="underline"></div>
+                            </div>
+                            <div class="navicon _1"></div>
+                        </a><a data-w-id="0c1fd092-965d-b08e-587c-f2013d644fbc" href="index.html"
+                            class="navbox temp w-inline-block">
+                            <div class="nav-link">
+                                <div class="nav-text">Blogs</div>
+                                <div class="underline"></div>
+                            </div>
+                            <div class="navicon _3"></div>
+                        </a><a data-w-id="0c1fd092-965d-b08e-587c-f2013d644fc2" href="/motion-graphic-designs"
+                            class="navbox temp w-inline-block">
+                            <div class="nav-link">
+                                <div class="nav-text">Contact</div>
+                                <div class="underline"></div>
+                            </div>
+                            <div class="navicon _2"></div>
+                        </a></div>
                 </div>
             </div>
         </div>
-        <div data-w-id="b9fbef39-73c3-e57c-ce67-5c76682d39e9" class="svg-bg"></div>
-    </div>
-    <div class="progresssec">
-        <div class="container w-container">
-            <div class="progresscontainer"><a href="#Profile" class="dots w-inline-block"></a><a href="#Knowledge"
-                    class="dots w-inline-block"></a><a href="#Work" class="dots w-inline-block"></a><a href="#Tech"
-                    class="dots w-inline-block"></a><a href="#Testimonials" class="dots w-inline-block"></a>
-                <div data-w-id="c4f36eee-2c71-4ce7-db97-fc6bf9fb8d5b" class="progress"></div>
-                <div class="progress-light"></div>
-            </div>
-        </div>
-        <div class="container w-container">
-            <div data-animation="default" data-collapse="small" data-duration="400" data-easing="ease"
-                data-easing2="ease" role="banner" class="navbar w-nav">
-                <div class="smallcontainer w-container">
-                    <nav role="navigation" class="nav-menu w-nav-menu"><a
-                            data-w-id="4a9fe522-1700-0a23-b935-2ccfb9d8f0c0" href="index.html" aria-current="page"
-                            class="nav-link w-inline-block w--current">
-                            <div class="nav-text">Home</div>
-                            <div class="underline"></div>
-                        </a><a data-w-id="4a9fe522-1700-0a23-b935-2ccfb9d8f0c4" href="projects.html"
-                            class="nav-link w-inline-block">
-                            <div class="nav-text">Projects</div>
-                            <div class="underline"></div>
-                        </a><a data-w-id="4a9fe522-1700-0a23-b935-2ccfb9d8f0c8" href="index.html" aria-current="page"
-                            class="brand-2 w-inline-block w--current"><img src="images/logoskeleton.svg" loading="lazy"
-                                alt="Carmic Design logo" class="navlogo" /></a><a
-                            data-w-id="4a9fe522-1700-0a23-b935-2ccfb9d8f0ca" href="me.html" class="nav-link w-inline-block">
-                            <div class="nav-text">Me</div>
-                            <div class="underline"></div>
-                        </a><a data-w-id="4a9fe522-1700-0a23-b935-2ccfb9d8f0ce" href="#"
-                            class="nav-link w-inline-block">
-                            <div class="nav-text">Contact</div>
-                            <div class="underline"></div>
-                        </a></nav>
-                    <div class="menu-button-3 w-nav-button">
-                        <div class="w-icon-nav-menu"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="navbar2"><a data-w-id="0c1fd092-965d-b08e-587c-f2013d644fad" href="index.html" aria-current="page"
-                    class="brand-2 w-inline-block w--current"><img src="images/logoskeleton.svg" loading="lazy"
-                        alt="Carmic Design logo" class="navlogo" /></a>
-                <div class="rightwrap"><a data-w-id="0c1fd092-965d-b08e-587c-f2013d644fb0" href="projects.html"
-                        class="navbox w-inline-block">
-                        <div class="nav-link">
-                            <div class="nav-text">Projects</div>
-                            <div class="underline"></div>
-                        </div>
-                        <div class="navicon"></div>
-                    </a><a data-w-id="0c1fd092-965d-b08e-587c-f2013d644fb6" href="me.html" class="navbox w-inline-block">
-                        <div class="nav-link">
-                            <div class="nav-text">Me</div>
-                            <div class="underline"></div>
-                        </div>
-                        <div class="navicon _1"></div>
-                    </a><a data-w-id="0c1fd092-965d-b08e-587c-f2013d644fbc" href="index.html" aria-current="page"
-                        class="navbox temp w-inline-block w--current">
-                        <div class="nav-link">
-                            <div class="nav-text">Blogs</div>
-                            <div class="underline"></div>
-                        </div>
-                        <div class="navicon _3"></div>
-                    </a><a data-w-id="0c1fd092-965d-b08e-587c-f2013d644fc2" href="/motion-graphic-designs"
-                        class="navbox temp w-inline-block">
-                        <div class="nav-link">
-                            <div class="nav-text">Contact</div>
-                            <div class="underline"></div>
-                        </div>
-                        <div class="navicon _2"></div>
-                    </a></div>
-            </div>
-        </div>
-    </div>
-    <div class="bodywrap2">
-        <div id="Knowledge" class="section">
+        <div class="scroll-section">
             <div class="container w-container">
                 <div class="containerspaced">
-                    <div class="headholder">
-                        <h1 class="heading1">My Specialized <br />‍<span class="h1b">Knowledge</span></h1>
-                        <p class="bodypara2">I am a designer who has the  “left-brain” ability to study trends, research
-                            problems, analyse data and results, as well as the “right-brain” ability to take that info
-                            and transform it into a thoughtful, functional, effective, beautiful pieces of creative!<br /> <br />
-                            <b>Click below to learn more!</b></p>
-                    </div>
+                    <h2 class="header">About Me<span class="boldred1">.</span><span></span></h2>
+                    <p class="abouttext">Meet Karma, a talented and passionate graphic designer with a keen eye for
+                        detail and a creative flair that makes his work stand out. Karma has been working in the field
+                        of design for over 10 years, building a solid reputation as a skilled and reliable designer with
+                        a talent for creating engaging and effective visual content. <br /><br />Karma&#x27;s journey in
+                        design began when he decided to follow his passion and undertake a Diploma in Graphic Design in
+                        2020. However, this was not the start of his design career, as he had already been working as a
+                        freelance graphic designer since 2013, specialising in motion graphic design. He has worked on
+                        numerous projects with various clients, building up his skills and experience in the
+                        field.<br /><br />Over the years, Karma has expanded his skillset to include digital and print
+                        designs, infographics, WCAG standards, inclusive design, and user-centered approaches. He is a
+                        skilled eLearning designer/developer with extensive technical skills ranging from Adobe Creative
+                        Suites, screencasting, animations, video editing, and Articulate Storyline with in-depth
+                        knowledge of triggers, variables, logic and Javascript, which enables him to develop next-level
+                        content.<br /><br />Karma&#x27;s work showcases his creative flair for digital design, motion
+                        graphics, and eLearning contents. He approaches his work with a pragmatic and analytical
+                        mindset, creating designs that are both aesthetically pleasing and functional. He is passionate
+                        about designing and producing projects that bring stories to life, creating engaging and
+                        immersive experiences for his audience.<br /><br />In addition to his design work, Karma has
+                        worked as a Budget Officer for the Ministry of Finance in Bhutan for 8 years. This background
+                        has given him strong skills in interpreting and organising numerical and statistical data, and
+                        presenting complex information to non-technical clients through simple, understandable, and
+                        engaging visuals.</p>
                 </div>
-                <div class="w-layout-grid grid-2">
-                    <div id="w-node-_299259e0-dd39-8cdd-346f-3e27e2b6da85-4a3a5c3a"
-                        data-w-id="299259e0-dd39-8cdd-346f-3e27e2b6da85" class="cardwrapper">
-                        <div class="card">
-                            <div class="cardfront">
-                                <div class="_1text">
-                                    <div class="icontext">eLearning Design &amp; Development</div>
-                                    <div class="icontext2">Certified by Udemy and core Developer of The Learning Deli
-                                    </div>
-                                </div>
-                                <div class="lottieedu" data-w-id="93389a6c-9a47-ef7c-67c6-e3915ca513c0"
-                                    data-animation-type="lottie" data-src="images/elearninganimate.json" data-loop="1"
-                                    data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg"
-                                    data-default-duration="5.4" data-duration="0"></div>
-                            </div>
-                            <div class="cardback">
-                                <div class="backtext">I am an experienced e-learning designer and developer with a
-                                    strong background in instructional design, course development, multimedia
-                                    production, and learning management system administration.<br /></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="w-node-d13aa48e-bc2e-6df6-737e-08acd884755a-4a3a5c3a"
-                        data-w-id="d13aa48e-bc2e-6df6-737e-08acd884755a" class="cardwrapper">
-                        <div class="card">
-                            <div class="cardfront">
-                                <div class="_1text">
-                                    <div class="icontext">Graphic Design</div>
-                                    <div class="icontext2">Dip. in Graphic Design from CIT</div>
-                                </div>
-                                <div class="lottieedu" data-w-id="d13aa48e-bc2e-6df6-737e-08acd8847564"
-                                    data-animation-type="lottie" data-src="images/gdanimate.json" data-loop="1"
-                                    data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg"
-                                    data-default-duration="1.64" data-duration="0"></div>
-                            </div>
-                            <div class="cardback">
-                                <div class="backtext">I specialize in digital and print design, with expertise in data
-                                    visualization and user-centered design. Applying design elements and principles, I
-                                    provide effective solutions by identifying gaps in expectations and performance.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="w-node-_6f2c1e36-2969-172b-c50b-d806a47d0772-4a3a5c3a"
-                        data-w-id="6f2c1e36-2969-172b-c50b-d806a47d0772" class="cardwrapper">
-                        <div class="card">
-                            <div class="cardfront">
-                                <div class="_1text">
-                                    <div class="icontext">Web Design &amp; Development</div>
-                                    <div class="icontext2">Crash course from Webflow University</div>
-                                </div>
-                                <div class="lottieedu" data-w-id="6f2c1e36-2969-172b-c50b-d806a47d077c"
-                                    data-animation-type="lottie" data-src="images/webdevanimate.json" data-loop="1"
-                                    data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg"
-                                    data-duration="0"></div>
-                            </div>
-                            <div class="cardback">
-                                <div class="backtext">I specialize in using Webflow to create visually stunning websites
-                                    for various clients. My expertise includes coding custom interactions and
-                                    animations, all while ensuring the website is responsive and accessible.<br /></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="w-node-c1fd3dd4-8038-9a8e-ed9e-cf2f01c7f2c8-4a3a5c3a"
-                        data-w-id="c1fd3dd4-8038-9a8e-ed9e-cf2f01c7f2c8" class="cardwrapper">
-                        <div class="card">
-                            <div class="cardfront">
-                                <div class="_1text">
-                                    <div class="icontext">Infographic</div>
-                                    <div class="icontext2">Certified by Coursera</div>
-                                </div>
-                                <div class="lottieedu" data-w-id="c1fd3dd4-8038-9a8e-ed9e-cf2f01c7f2d0"
-                                    data-animation-type="lottie" data-src="images/infoganimate.json" data-loop="1"
-                                    data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg"
-                                    data-default-duration="5" data-duration="0"></div>
-                            </div>
-                            <div class="cardback">
-                                <div class="backtext">Designing visually appealing infographics with a strong focus on
-                                    clarity, communication and storytelling.<br /></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="w-node-d5b9ee40-e3dc-8236-4a0a-610eda60aefc-4a3a5c3a"
-                        data-w-id="d5b9ee40-e3dc-8236-4a0a-610eda60aefc" class="cardwrapper">
-                        <div class="card">
-                            <div class="cardfront">
-                                <div class="_1text">
-                                    <div class="icontext">Motion Graphic &amp; Animation</div>
-                                    <div class="icontext2">Self-taught with extensive experience</div>
-                                </div>
-                                <div class="lottieedu" data-w-id="d5b9ee40-e3dc-8236-4a0a-610eda60af04"
-                                    data-animation-type="lottie" data-src="images/motionganimate.json" data-loop="1"
-                                    data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg"
-                                    data-default-duration="1.6" data-duration="2"></div>
-                            </div>
-                            <div class="cardback">
-                                <div class="backtext">As a motion graphics and animation specialist, I have extensive
-                                    experience creating visually stunning animations for various clients. My expertise
-                                    includes creating explainer videos, animated logos or icons.<br /></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="w-node-d9bc9a15-39bf-fcb7-107f-135cd3fcb192-4a3a5c3a"
-                        data-w-id="d9bc9a15-39bf-fcb7-107f-135cd3fcb192" class="cardwrapper">
-                        <div class="card">
-                            <div class="cardfront">
-                                <div class="_1text">
-                                    <div class="icontext">UI/UX Design</div>
-                                    <div class="icontext2">Google Professional Certificate</div>
-                                </div>
-                                <div class="lottieedu" data-w-id="d9bc9a15-39bf-fcb7-107f-135cd3fcb19a"
-                                    data-animation-type="lottie" data-src="images/uxanimate2.json" data-loop="1"
-                                    data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg"
-                                    data-default-duration="5" data-duration="0"></div>
-                            </div>
-                            <div class="cardback">
-                                <div class="backtext">I have experience designing user-friendly interfaces for various
-                                    digital products. I am skilled in creating visually appealing designs that enhance
-                                    the user experience and meet business objectives.<br /></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="w-node-_38eb0039-0299-608e-5952-821f275d888f-4a3a5c3a"
-                        data-w-id="38eb0039-0299-608e-5952-821f275d888f" class="cardwrapper">
-                        <div class="card">
-                            <div class="cardfront">
-                                <div class="_1text">
-                                    <div class="icontext">Inclusive Design</div>
-                                    <div class="icontext2">Certified by Coursera</div>
-                                </div>
-                                <div class="lottieedu" data-w-id="38eb0039-0299-608e-5952-821f275d8897"
-                                    data-animation-type="lottie" data-src="images/inclusive.json" data-loop="1"
-                                    data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg"
-                                    data-default-duration="5.4" data-duration="0"></div>
-                            </div>
-                            <div class="cardback">
-                                <div class="backtext">Inclusive design specialist ensuring accessibility and catering to
-                                    diverse user needs and abilities.<br /></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="w-node-_2dc5873b-c03a-846f-caf3-833d7a05ee80-4a3a5c3a"
-                        data-w-id="2dc5873b-c03a-846f-caf3-833d7a05ee80" class="cardwrapper">
-                        <div class="card">
-                            <div class="cardfront">
-                                <div class="_1text">
-                                    <div class="icontext">Accessible PDFs</div>
-                                    <div class="icontext2">Certified by Vision Australia</div>
-                                </div>
-                                <div class="lottieedu" data-w-id="2dc5873b-c03a-846f-caf3-833d7a05ee88"
-                                    data-animation-type="lottie" data-src="images/pdfanimate.json" data-loop="1"
-                                    data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg"
-                                    data-default-duration="5" data-duration="0"></div>
-                            </div>
-                            <div class="cardback">
-                                <div class="backtext">I specialize in creating accessible PDFs, including fixing complex
-                                    tables and ensuring compliance with WCAG 2.0 and 2.1 standards.<br /></div>
+            </div>
+            <div class="scroll-container w-container">
+                <div class="linewrap">
+                    <div class="sec">
+                        <div class="line-ver"></div>
+                        <div data-w-id="8a3219ee-abaa-408b-9968-bf14860f5e05"
+                            style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+                            class="line-ver-animate"></div>
+                        <div class="scrolltxt">
+                            <div class="text-wrap">
+                                <div data-w-id="d31d71e3-3454-c890-6851-f878cd0c8557"
+                                    style="-webkit-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+                                    class="scroll">SCROLL</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="Work" class="section">
-            <div class="container w-container">
-                <div class="containerspaced">
-                    <div class="headholder _3">
-                        <h1 class="heading1">My Works&#x27; <br /><span class="h1b">Involvement</span></h1>
-                        <p class="bodypara2">Played a pivotal role in various projects ranging from developing
-                            e-learning courses, infographics, motion graphics, and graphic designs for clients across
-                            industries including Australian Government, using my creative talents to effectively
-                            communicate complex information through visually engaging solutions.</p>
+        <div class="beforetimelinebg"></div>
+        <div class="timeline_section">
+            <div class="timeline_container">
+                <div class="timeline_wrapper">
+                    <div class="timeline_progress">
+                        <div class="timeline_progressbar"></div>
                     </div>
-                </div>
-                <div class="infinitewrapper">
-                    <div class="feather-border _1"></div>
-                    <div class="feather-border _2"></div>
-                    <div class="marquewrap">
-                        <div class="marque">
-                            <div class="element"><img src="images/phrp-20logo.svg" loading="lazy" alt=""
-                                    class="clientlogo" /></div>
-                            <div class="element"><img src="images/helvetas-20logo.svg" loading="lazy" alt=""
-                                    class="clientlogo" /></div>
-                            <div class="element"><img src="images/soe-20logo.svg" loading="lazy" alt=""
-                                    class="clientlogo" /></div>
-                            <div class="element"><img src="images/dha-20logo2.svg" loading="lazy" alt=""
-                                    class="clientlogo" /></div>
-                            <div class="element"><img src="images/afao-20logo.svg" loading="lazy" alt=""
-                                    class="clientlogo" /></div>
-                            <div class="element"><img src="images/phrp-20logo.svg" loading="lazy" alt=""
-                                    class="clientlogo" /></div>
+                    <div data-w-id="94b2f2ec-48cd-0f14-4ebe-6ad8e673ee59" class="w-layout-grid timeline_item">
+                        <div id="w-node-_1077f576-f2a7-23bd-993d-1b5c2e5136e3-fa3a5cf9" class="timeline_left">
+                            <div class="timeline_textleft">April 2013</div>
                         </div>
-                        <div class="marque">
-                            <div class="element"><img src="images/dfat_dark-20logo2.svg" loading="lazy" alt=""
-                                    class="clientlogo" /></div>
-                            <div class="element"><img src="images/helvetas-20logo.svg" loading="lazy" alt=""
-                                    class="clientlogo" /></div>
-                            <div class="element"><img src="images/soe-20logo.svg" loading="lazy" alt=""
-                                    class="clientlogo" /></div>
-                            <div class="element"><img src="images/dha-20logo2.svg" loading="lazy" alt=""
-                                    class="clientlogo" /></div>
-                            <div class="element"><img src="images/afao-20logo.svg" loading="lazy" alt=""
-                                    class="clientlogo" /></div>
-                            <div class="element"><img src="images/phrp-20logo.svg" loading="lazy" alt=""
-                                    class="clientlogo" /></div>
+                        <div id="w-node-f33c09a4-f0ba-95c3-a9c0-360a3e91375c-fa3a5cf9" class="timeline_mid">
+                            <div class="timeline_circle"></div>
+                        </div>
+                        <div class="timeline_right">
+                            <div class="timeline_para">Started my career as Freelance Graphic/Motion Graphic Designer.
+                            </div><img src="images/exbrand3.svg" loading="lazy" alt="" />
+                            <div class="right_alligner">
+                                <div class="timeline_para2">With much experiment and inspirations, I created my own
+                                    first intro portfolio motion graphic video using Adobe illustrator, After effects
+                                    and Premiere Pro.</div><img src="images/introportfoliomock1.png" loading="lazy"
+                                    width="400" sizes="(max-width: 479px) 200px, 400px"
+                                    alt="Thumbnail of intro portfolio of Karma skills video to be played in youtube"
+                                    srcset="images/introportfoliomock1-p-500.png 500w, images/introportfoliomock1-p-800.png 800w, images/introportfoliomock1-p-1080.png 1080w, images/introportfoliomock1.png 1500w"
+                                    class="image-81" />
+                            </div>
                         </div>
                     </div>
-                    <div class="workbg"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="Tech" class="section">
-        <div class="container w-container">
-            <div class="containerspaced">
-                <div class="stackwrap">
-                    <div class="first-stack">
-                        <div class="stack-header">
-                            <h1 class="heading1">My Tech <br /><span class="h1b">Proficiency</span></h1>
-                            <p class="bodypara2">Not only do I possess my passion in strategic designs, but I am also
-                                very glib in various software that allow me to push my creative boundaries.</p>
+                    <div data-w-id="4f0c74a8-743c-64ec-0f1e-2dbc0c94e130" class="w-layout-grid timeline_item">
+                        <div class="timeline_left">
+                            <div class="timeline_textleft">January 2014</div>
                         </div>
-                        <div data-w-id="f67b5ca2-cb7a-6ed1-d11c-c5e39f93eb93" class="stackcard">
-                            <div class="stackcontent">
-                                <div class="stack-icon-holder"></div>
-                                <div class="stack-text-holder">
-                                    <div class="stacktext">Proficient in eLearning authoring tools, including Articulate
-                                        Storyline 360, advanced problem-solving skills using javascript, complex
-                                        variables and trigger, video editing, animation, screencast, syncing voice-over,
-                                        closed captions, and ensuring WCAG compatibility, makes me highly suitable for
-                                        developing accessible and engaging eLearning courses.</div>
+                        <div id="w-node-_4f0c74a8-743c-64ec-0f1e-2dbc0c94e134-fa3a5cf9" class="timeline_mid">
+                            <div class="timeline_circle"></div>
+                        </div>
+                        <div class="timeline_right">
+                            <div class="timeline_para">Guest Trainer for visualisation</div>
+                            <div class="timeline_para2">I was invited as a Guest Trainer “Training of Trainer - Pedagogy
+                                (Technical Instructional), Module Visualisation&quot; organised and conducted by the
+                                Training &amp; Professional Services Division, Department of Human Resources, MOLHR,
+                                Bhutan.</div>
+                            <div class="timeline_para2">One of the animated powerpoint slide taken from the presentation
+                            </div>
+                            <div class="loite_holder">
+                                <div data-w-id="b57525b5-5c3b-ecde-774c-e6b33c449f5f" data-animation-type="lottie"
+                                    data-src="images/visual.json" data-loop="1" data-direction="1" data-autoplay="1"
+                                    data-is-ix2-target="0" data-renderer="svg" data-default-duration="4.916666666666667"
+                                    data-duration="8"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-w-id="ed9ae315-feb9-f64c-0b58-2ff7b4f072b0" class="w-layout-grid timeline_item">
+                        <div class="timeline_left">
+                            <div class="timeline_textleft">February 2020</div>
+                        </div>
+                        <div id="w-node-ed9ae315-feb9-f64c-0b58-2ff7b4f072b4-fa3a5cf9" class="timeline_mid">
+                            <div class="timeline_circle"></div>
+                        </div>
+                        <div class="timeline_right">
+                            <div class="timeline_para">Diploma in Graphic Design from Canberra Institute of Technology
+                            </div>
+                            <div class="timeline_para2">Pursued Graphic Design Diploma course from Canberra Institute of
+                                Technology (CIT) to fully switch my career from finance personnel to follow my passion
+                                in visualisation.</div>
+                            <div class="right_alligner">
+                                <div class="imageframe"><img src="images/cit-20pic.jpg" loading="lazy" width="400"
+                                        sizes="(max-width: 767px) 180px, (max-width: 991px) 260px, 400px" alt=""
+                                        srcset="images/cit-20pic-p-500.jpg 500w, images/cit-20pic-p-800.jpg 800w, images/cit-20pic-p-1080.jpg 1080w, images/cit-20pic.jpg 1181w" />
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="stackcard _2">
-                        <div class="stackcontent">
-                            <div class="stack-icon-holder _2"></div>
-                            <div class="stack-text-holder">
-                                <div class="stacktext">I possess expertise in Adobe Creative Suite, including InDesign,
-                                    Illustrator, Photoshop, After Effects, Acrobat, Premier Pro, and Media Encoder. My
-                                    mastery of these tools allows me to create impressive designs, animations, and
-                                    screencast with ease, resulting in high-quality output and satisfied clients.</div>
+                    <div data-w-id="ec8721c7-139e-9101-f416-49feb29b7888" class="w-layout-grid timeline_item">
+                        <div class="timeline_left">
+                            <div class="timeline_textleft">September 2020</div>
+                        </div>
+                        <div id="w-node-ec8721c7-139e-9101-f416-49feb29b788c-fa3a5cf9" class="timeline_mid">
+                            <div class="timeline_circle"></div>
+                        </div>
+                        <div class="timeline_right">
+                            <div class="timeline_para">Updated my Brand</div>
+                            <div class="timeline_para2">We got a class assignment to create our own personal identity
+                                logo. Nevertheless, I felt it was time for me to update my exisiting logo with new
+                                vibrant, minimalistic look and feel.</div>
+                            <div class="right_alligner">
+                                <div class="picwrap"><img src="images/cd-20new-20logo-02.svg" loading="lazy" width="300"
+                                        alt="" /></div>
                             </div>
                         </div>
                     </div>
-                    <div class="stackcard _3">
-                        <div class="stackcontent">
-                            <div class="stack-icon-holder _3"></div>
-                            <div class="stack-text-holder">
-                                <div class="stacktext">Skilled in Microsoft Office Suite, especially Word, PowerPoint,
-                                    and Excel. I can create, organize, and manage documents, presentations, and
-                                    spreadsheets. My expertise in charts, graphs, VBA, and Macros enhances my abilities
-                                    to provide efficient solutions for tasks and projects.</div>
+                    <div data-w-id="8ab8c1bf-e7d2-a4d7-d83f-597d6840dba1" class="w-layout-grid timeline_item">
+                        <div class="timeline_left">
+                            <div class="timeline_textleft">July 2021</div>
+                        </div>
+                        <div id="w-node-_8ab8c1bf-e7d2-a4d7-d83f-597d6840dba5-fa3a5cf9" class="timeline_mid">
+                            <div class="timeline_circle"></div>
+                        </div>
+                        <div class="timeline_right">
+                            <div class="timeline_para">Joined Biotext as Information Designer</div>
+                            <div class="timeline_para2">Was involved in working closely with writing, editing and design
+                                team on information design, data visualisation, infographics, concept development, and
+                                page layout. Has worked on a range of products, including web content, reports, fact
+                                sheets, graphs, diagrams and infographics, in collaboration with the Biotext team and
+                                its’ clients. One of the standout work while working at Biotext was my involvement in
+                                developing the infographics for the 2021 Australia State of Environment (SOE) – helping
+                                to explain complex concepts and tell nationally important stories with visual impact.
                             </div>
+                            <div class="right_alligner">
+                                <div class="picwrap"><img src="images/soe-20logo.svg" loading="lazy" width="300"
+                                        alt="" /></div>
+                            </div><a href="soe-infographics.html" target="_blank" class="link_box w-inline-block">
+                                <div class="link_text">Click to see infographics case study</div><img
+                                    src="images/link_icon.svg" loading="lazy" width="16" alt="" class="linkicon" />
+                            </a>
                         </div>
                     </div>
-                    <div class="stackcard _4">
-                        <div class="stackcontent">
-                            <div class="stack-icon-holder _4"></div>
-                            <div class="stack-text-holder">
-                                <div class="stacktext">My proficiency in Webflow allows me to create engaging and
-                                    responsive websites, including customised designs that meet the unique needs of
-                                    clients and projects. My skills in designing complex interactions, user experiences,
-                                    and responsive layouts result in visually stunning websites that are both functional
-                                    and easy to navigate.</div>
-                            </div>
+                    <div data-w-id="91774f77-894c-d39d-697a-28c8f9635c6a" class="w-layout-grid timeline_item">
+                        <div class="timeline_left">
+                            <div class="timeline_textleft">November 2021</div>
+                        </div>
+                        <div id="w-node-_91774f77-894c-d39d-697a-28c8f9635c6e-fa3a5cf9" class="timeline_mid">
+                            <div class="timeline_circle"></div>
+                        </div>
+                        <div class="timeline_right">
+                            <div class="timeline_para">AGDA Awards Finalist</div>
+                            <div class="timeline_para2">One of my Motion Design work during CIT has been nominated as
+                                finalist in the Australian Graphic Design Association (AGDA) Awards in Student Motion
+                                category for the year 2021.</div>
+                            <div class="right_alligner"><img src="images/prizebadge.svg" loading="lazy" width="150"
+                                    alt="" class="image-82" /></div><a
+                                href="https://agda.com.au/agda-award/agda-design-awards-2021/finalist/student-motion/94908"
+                                target="_blank" class="link_box w-inline-block">
+                                <div class="link_text">Click to check my entry in AGDA web</div><img
+                                    src="images/link_icon.svg" loading="lazy" width="16" alt="" class="linkicon" />
+                            </a>
                         </div>
                     </div>
-                    <div class="stackcard _5">
-                        <div class="stackcontent">
-                            <div class="stack-icon-holder _5"></div>
-                            <div class="stack-text-holder">
-                                <div class="stacktext">In addition, I possess skills in various other tools such as
-                                    Figma, Canva, Shopify, XERO, Confluence, and Cloud Technology. My diverse skill set
-                                    enables me to manage projects efficiently, design visually appealing graphics, and
-                                    maintain financial records. My expertise in these tools makes me a valuable asset to
-                                    any team or project.</div>
-                            </div>
+                    <div data-w-id="4c336395-f6a1-53d5-6f98-a5136059806d" class="w-layout-grid timeline_item">
+                        <div class="timeline_left">
+                            <div class="timeline_textleft">October 2022</div>
+                        </div>
+                        <div id="w-node-_4c336395-f6a1-53d5-6f98-a51360598071-fa3a5cf9" class="timeline_mid">
+                            <div class="timeline_circle"></div>
+                        </div>
+                        <div class="timeline_right">
+                            <div class="timeline_para">Joined The Learning Deli as eLearning Designer/Developer</div>
+                            <div class="timeline_para2">With my extensive background in information design and strong
+                                problem-solving skills, including proficiency in logic, creating user-friendly content,
+                                advanced Excel skills, and functional coding knowledge, I joined The Learning Deli, a
+                                division of the esteemed Tiparra Group, to broaden my expertise in developing eLearning
+                                content and assisting learners.<br /><br />Drawing on my refined skill set and passion
+                                for crafting immersive learning experiences, I was eager to contribute to The Learning
+                                Deli&#x27;s exceptional team. Confident in my abilities, I am utilising my background in
+                                information design and problem-solving to create engaging, interactive, and impactful
+                                eLearning content that resonated with learners, enhancing their comprehension and
+                                retention of the subject matter.<br /></div>
+                            <div class="right_alligner"><img src="images/tiparra-20group-20pic_small.png" loading="lazy"
+                                    width="400" sizes="(max-width: 479px) 200px, 400px" alt=""
+                                    srcset="images/tiparra-20group-20pic_small-p-500.png 500w, images/tiparra-20group-20pic_small.png 593w"
+                                    class="image-83" /></div><a href="https://www.tiparra.com/company" target="_blank"
+                                class="link_box w-inline-block">
+                                <div class="link_text">Click to check Tiparra web</div><img src="images/link_icon.svg"
+                                    loading="lazy" width="16" alt="" class="linkicon" />
+                            </a>
                         </div>
                     </div>
+                    <div class="overlayfadetop"></div>
+                    <div class="overlayfadebottom"></div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="bodywrap2">
-        <div id="Testimonials" class="testimonialsection">
-            <div class="container w-container">
-                <div class="containerspaced">
-                    <div class="headholder">
-                        <h1 class="heading1">My Testimonials<br /><span class="h1b">Speak</span></h1>
-                        <p class="bodypara2">Don&#x27;t just take my word for it. See what my satisfied
-                            clients/colleagues have to say about their experience working with me and the results we
-                            achieved together.</p>
-                    </div>
-                    <div class="testwrapper">
-                        <div id="w-node-_5d9a2d4f-3afc-8011-27b3-d87c38959d58-4a3a5c3a" class="testbox">
-                            <div class="redbar"><img src="images/whitequote.svg" loading="lazy" alt="Quotation mark"
-                                    class="image-24" /></div>
-                            <div class="bodypara2 center">Karma has excellent skills in the production of digital
-                                learning content with a wide range of industry standard tools, such as Articulate 360,
-                                Adobe Captivate and the full Adobe Creative Suite. Before his tenure at The Learning
-                                Deli, Karma had excellent graphical design skills, but only limited experience with
-                                elearning authoring tools. He developed these skills to a highly advanced level in a
-                                short time and has become an authority on elearning authoring within the team.</div>
-                            <div class="testimonialname">Mike Benjamin</div>
-                            <div class="text-block-2">Chief Knowledge Wrangler</div>
-                            <div class="text-block-2">The Learning Deli</div>
-                        </div>
-                        <div id="w-node-_7f831a08-4104-ac72-a852-ca38211856ba-4a3a5c3a" class="testbox">
-                            <div class="redbar"><img src="images/whitequote.svg" loading="lazy" alt="Quotation mark"
-                                    class="image-24" /></div>
-                            <div class="bodypara2 center">Karma&#x27;s creativity, technical skills and friendly
-                                personality make him a valuable member of any team. We hired Karma at Biotext for just
-                                over a year as an Information Designer, and he contributed his design expertise to wide
-                                range of projects. His standout work was in developing the infographics for the 2021
-                                Australia State of the Environment report - helping to explain complex concepts and tell
-                                nationally important stories with visual impact. Karma is always eager to learn and
-                                improve, and his positive attitude makes him a pleasure to work with.</div>
-                            <div class="testimonialname">Julie Irish</div>
-                            <div class="text-block-2">Chief Executive Officer</div>
-                            <div class="text-block-2">Biotext</div>
-                        </div>
-                        <div id="w-node-_5c062757-3a6a-52f2-a18d-98aa67243402-4a3a5c3a" class="testbox">
-                            <div class="redbar"><img src="images/whitequote.svg" loading="lazy" alt="Quotation mark"
-                                    class="image-24" /></div>
-                            <div class="bodypara2 center">Karma centers the learner in all his projects, always bringing
-                                great attention to detail and meeting deadlines. Pleasant and positive to work with, his
-                                technical proficiency, persistence, and problem-solving skills combine to produce
-                                effective e-learning that never loses sight of the learner. Karma is very knowledgeable
-                                about various software, including e-learning authoring tools, LMS administration, video
-                                editing, and animation. Additionally, he is a fast learner who quickly adapts to new
-                                technology, ensuring that every learning experience is enjoyable.</div>
-                            <div class="testimonialname">Rose Ciccarelli</div>
-                            <div class="text-block-2">Content Writer</div>
-                            <div class="text-block-2">Future Theory</div>
-                        </div>
-                    </div>
-                </div>
-                <div data-w-id="909e0e7a-c290-1637-504c-6956f8ab48cd" class="ty-wrapper">
-                    <div class="ty-card">
-                        <div class="cardfront _2">
-                            <div class="ty">Thank You!</div>
-                        </div>
-                        <div class="cardback _2">
-                            <p class="thanksbody">Happy visiting my portfolio website</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 <!-- Contact (glass card), same size/look as .ty-card -->
 <section id="home-contact" class="contact-ty-section">
@@ -1284,7 +1136,7 @@ I bring value through designs." class="image-80" />
         <div class="ty-card contact-card" role="form" aria-labelledby="home-contact-title">
           <h2 id="home-contact-title" class="ty" style="margin-bottom:10px;">Get in touch</h2>
 
-          <form id="home-contact-form" class="w-form">
+          <form id="home-contact-form" class="w-form" novalidate>
             <label for="hc-name" class="label">Your Name</label>
             <input id="hc-name" name="name" type="text" class="textinput w-input contact-input" placeholder="Enter your full name" required>
 
@@ -1306,10 +1158,13 @@ I bring value through designs." class="image-80" />
   </div>
 </section>
 
-    <script>
-  const FORM_URL = "PASTE_YOUR_LAMBDA_FUNCTION_URL_HERE"; // e.g. https://abcde.lambda-url.ap-southeast-2.on.aws/
+        
+<script id="contact-ty-script">
+  // ====== CONFIG ======
+  const MOCK_MODE = true; // true = demo (no backend). Set to false when your AWS backend is ready.
+  const FORM_URL = "";    // when MOCK_MODE === false, put your https://… Lambda/API URL here
 
-  const hcForm = document.getElementById("home-contact-form");
+  const hcForm   = document.getElementById("home-contact-form");
   const hcStatus = document.getElementById("home-contact-status");
 
   if (hcForm && hcStatus) {
@@ -1318,6 +1173,7 @@ I bring value through designs." class="image-80" />
       hcStatus.textContent = "Sending…";
 
       const fd = new FormData(hcForm);
+
       // honeypot
       if ((fd.get("company") || "").trim() !== "") {
         hcStatus.textContent = "Thanks!";
@@ -1326,11 +1182,27 @@ I bring value through designs." class="image-80" />
       }
 
       const payload = {
-        name: fd.get("name"),
-        email: fd.get("email"),
-        message: fd.get("message")
+        name: (fd.get("name") || "").toString().trim(),
+        email: (fd.get("email") || "").toString().trim(),
+        message: (fd.get("message") || "").toString().trim()
       };
 
+      // simple front-end validation feedback
+      if (!payload.name || !payload.email || !payload.message) {
+        hcStatus.textContent = "Please fill in all fields.";
+        return;
+      }
+
+      // DEMO: no backend yet
+      if (MOCK_MODE) {
+        setTimeout(() => {
+          hcStatus.textContent = "Message sent (demo). I’ll get back to you soon!";
+          hcForm.reset();
+        }, 600);
+        return;
+      }
+
+      // REAL submission (when backend ready)
       try {
         const res = await fetch(FORM_URL, {
           method: "POST",
@@ -1338,6 +1210,7 @@ I bring value through designs." class="image-80" />
           body: JSON.stringify(payload)
         });
 
+        // expect { ok: true } from backend
         const body = await res.json().catch(() => ({}));
         if (res.ok && body.ok) {
           hcStatus.textContent = "Message sent. I’ll get back to you soon!";
@@ -1345,50 +1218,54 @@ I bring value through designs." class="image-80" />
         } else {
           hcStatus.textContent = body?.error || "Failed to send. Please try again later.";
         }
-      } catch {
+      } catch (err) {
         hcStatus.textContent = "Network error. Please try again.";
       }
     });
   }
 </script>
 
-    
-    <footer class="footer">
-        <div class="footercontainer w-container">
-            <div class="containerspaced">
-                <div class="footertext">
-                    <div class="foottext">
-                        <h2 class="h2foot">Let&#x27;s get social<span class="boldred1">.</span><span></span></h2>
-                    </div>
-                    <div id="w-node-d7804fc9-6627-7870-149c-7e93f9b9fbe0-f9b9fbd5" class="socialswrap">
-                        <div data-w-id="4041450b-b66a-a92e-23bb-7dc5d821722f" class="social-holder"><a
-                                href="http://www.linkedin.com/in/carmicdesign" target="_blank"
-                                class="socialicon w-inline-block"></a><a href="http://www.linkedin.com/in/carmicdesign"
-                                target="_blank" class="socialicon2 w-inline-block"></a></div>
-                        <div data-w-id="c4ccbdc2-48b4-58f4-6285-9eef51727cc4" class="social-holder _2"><a
-                                href="https://www.behance.net/carmicdesign" target="_blank"
-                                class="socialicon _2 w-inline-block"></a><a href="https://www.behance.net/carmicdesign"
-                                target="_blank" class="socialicon2 _2 w-inline-block"></a></div>
-                        <div data-w-id="0ab0bfda-5b86-b4ed-8075-8cd123ff9d1d" class="social-holder"><a
-                                href="http://www.linkedin.com/in/carmicdesign" target="_blank"
-                                class="socialicon _3 w-inline-block"></a><a
-                                href="https://www.instagram.com/carmic.design/" target="_blank"
-                                class="socialicon2 _3 w-inline-block"></a></div>
-                        <div data-w-id="c1526029-32bc-ab36-114f-30cf46d26e51" class="social-holder"><a
-                                href="mailto:carmic.design@gmail.com" class="socialicon _4 w-inline-block"></a><a
-                                href="mailto:carmic.design@gmail.com?subject=Hello!%20I%20like%20your%20Portfolio%20website"
-                                class="socialicon2 _4 w-inline-block"></a></div>
-                    </div>
-                    <div id="w-node-be693d80-b71e-117b-92a7-3f503d941375-f9b9fbd5">
-                        <div id="w-node-d7804fc9-6627-7870-149c-7e93f9b9fbe5-f9b9fbd5" class="developed">Responsive
-                            website designed and developed by Karma Tshering</div>
-                        <div id="w-node-_6eb137bd-fc29-e868-08fa-e4962fc1b0e0-f9b9fbd5" class="copyright">© 2025 Carmic
-                            Design, All rights reserved</div>
+        
+        <div class="beforetimelinebg"></div>
+        <footer class="footer">
+            <div class="footercontainer w-container">
+                <div class="containerspaced">
+                    <div class="footertext">
+                        <div class="foottext">
+                            <h2 class="h2foot">Let&#x27;s get social<span class="boldred1">.</span><span></span></h2>
+                        </div>
+                        <div id="w-node-d7804fc9-6627-7870-149c-7e93f9b9fbe0-f9b9fbd5" class="socialswrap">
+                            <div data-w-id="4041450b-b66a-a92e-23bb-7dc5d821722f" class="social-holder"><a
+                                    href="http://www.linkedin.com/in/carmicdesign" target="_blank"
+                                    class="socialicon w-inline-block"></a><a
+                                    href="http://www.linkedin.com/in/carmicdesign" target="_blank"
+                                    class="socialicon2 w-inline-block"></a></div>
+                            <div data-w-id="c4ccbdc2-48b4-58f4-6285-9eef51727cc4" class="social-holder _2"><a
+                                    href="https://www.behance.net/carmicdesign" target="_blank"
+                                    class="socialicon _2 w-inline-block"></a><a
+                                    href="https://www.behance.net/carmicdesign" target="_blank"
+                                    class="socialicon2 _2 w-inline-block"></a></div>
+                            <div data-w-id="0ab0bfda-5b86-b4ed-8075-8cd123ff9d1d" class="social-holder"><a
+                                    href="http://www.linkedin.com/in/carmicdesign" target="_blank"
+                                    class="socialicon _3 w-inline-block"></a><a
+                                    href="https://www.instagram.com/carmic.design/" target="_blank"
+                                    class="socialicon2 _3 w-inline-block"></a></div>
+                            <div data-w-id="c1526029-32bc-ab36-114f-30cf46d26e51" class="social-holder"><a
+                                    href="mailto:carmic.design@gmail.com" class="socialicon _4 w-inline-block"></a><a
+                                    href="mailto:carmic.design@gmail.com?subject=Hello!%20I%20like%20your%20Portfolio%20website"
+                                    class="socialicon2 _4 w-inline-block"></a></div>
+                        </div>
+                        <div id="w-node-be693d80-b71e-117b-92a7-3f503d941375-f9b9fbd5">
+                            <div id="w-node-d7804fc9-6627-7870-149c-7e93f9b9fbe5-f9b9fbd5" class="developed">Responsive
+                                website designed and developed by Karma Tshering</div>
+                            <div id="w-node-_6eb137bd-fc29-e868-08fa-e4962fc1b0e0-f9b9fbd5" class="copyright">© 2024
+                                Carmic Design, All rights reserved</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
     <script src="js/jquery.js" type="text/javascript"></script>
     <script src="js/webflow-script.js" type="text/javascript"></script>
     <script>
