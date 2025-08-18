@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-wf-page="640903c036b65f114a3a5c3a" data-wf-site="640903c036b65f1a203a5c3b" data-wf-status="1">
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
@@ -18,32 +18,36 @@
     <script type="text/javascript">window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-K0EF4D5TV4', { 'anonymize_ip': true });</script>
 
     <style>
-        /* Reset and simplify layout */
+        /* Reset and ensure scrollable layout */
         body, html {
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
             font-family: 'Montserrat', sans-serif;
             background-color: #ffffff;
             color: #181818;
             -webkit-font-smoothing: antialiased;
             font-size: 16px;
             line-height: 1.5;
-            overflow-y: scroll;
+            overflow-x: hidden; /* prevent horizontal scroll */
+            overflow-y: auto;  /* enable vertical scroll */
+            height: 100%;
         }
 
-        /* Remove unnecessary theme styles */
-        #content {
+        /* Simplify container and content structure */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
         }
 
-        /* Ensure scroll on mobile */
+        /* Ensure all sections can scroll */
         .bodywrap, .bodywrap2 {
-            min-height: 100vh;
-            overflow: auto;
+            min-height: 100vh;  /* make sure body content fills the screen */
+            overflow: auto;     /* allow scroll on content overflow */
         }
 
-        /* Navigation */
+        /* Navigation styles */
         .navbar, .nav-menu, .navbar2 {
             display: flex;
             justify-content: space-between;
@@ -115,15 +119,23 @@
 </head>
 
 <body>
-    <div class="container w-container">
+    <div class="container">
         <h1>Welcome to My Digital Portfolio</h1>
         <p>This is my redesigned digital portfolio. Feel free to browse my work and get in touch!</p>
+        <section class="section" id="Profile">
+            <div class="profile-section">
+                <img src="images/picture-202.png" alt="Profile Picture" class="hero-image" />
+                <h2>About Me</h2>
+                <p>I bring value through designs and creative solutions. Let’s create something beautiful together!</p>
+            </div>
+        </section>
 
         <!-- Other sections like "Projects", "Me", etc. will go here. -->
+
     </div>
 
     <footer class="footer">
-        <div class="footercontainer w-container">
+        <div class="footercontainer">
             <p>© 2025 Carmic Design, All rights reserved</p>
         </div>
     </footer>
