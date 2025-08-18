@@ -791,6 +791,40 @@
 @media (max-width: 767px){
   .glass-card{ padding:20px 16px 24px; }
 }
+
+    /* Gradient border for inputs */
+.glass-card .contact-input {
+  position: relative;
+  z-index: 1;
+  background-clip: padding-box; /* keep background inside border */
+  border: 2px solid transparent; /* make room for gradient border */
+  border-radius: 14px;
+  background: 
+    linear-gradient(90deg, #ff6a00, #ee0979) border-box, /* gradient border */
+    rgba(255, 255, 255, 0.12) padding-box;               /* glassy fill */
+  color: inherit;
+}
+
+/* Light mode: more frosted fill */
+#content.light-mode .glass-card .contact-input {
+  background: 
+    linear-gradient(90deg, #ff6a00, #ee0979) border-box,
+    rgba(255, 255, 255, 0.65) padding-box;
+}
+
+/* Dark mode: darker frosted fill */
+#content.dark-mode .glass-card .contact-input {
+  background: 
+    linear-gradient(90deg, #ff6a00, #ee0979) border-box,
+    rgba(30, 30, 30, 0.45) padding-box;
+}
+
+/* On focus, make the gradient border glow */
+.glass-card .contact-input:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 106, 0, 0.6), 0 0 20px rgba(238, 9, 121, 0.6);
+}
+
 </style>
 
 
@@ -1275,8 +1309,8 @@ I bring value through designs." class="image-80" />
                                 editing, and animation. Additionally, he is a fast learner who quickly adapts to new
                                 technology, ensuring that every learning experience is enjoyable.</div>
                             <div class="testimonialname">Rose Ciccarelli</div>
-                            <div class="text-block-2">Content Manager</div>
-                            <div class="text-block-2">Ethos CRS</div>
+                            <div class="text-block-2">Content Writer</div>
+                            <div class="text-block-2">Future Theory</div>
                         </div>
                     </div>
                 </div>
@@ -1299,8 +1333,10 @@ I bring value through designs." class="image-80" />
     <div class="containerspaced">
       <div class="ty-wrapper">
         <div class="glass-card" role="form" aria-labelledby="home-contact-title">
-          <h2 id="home-contact-title" class="contact-title h1b">
-              Get in touch
+          <h2 id="home-contact-title" class="contact-title">
+              <span class="h1b">Get</span> 
+              <span class="h1b">in</span> 
+              <span class="h1b">touch</span>
             </h2>
 
           <form id="home-contact-form" class="w-form" novalidate>
@@ -1357,7 +1393,7 @@ I bring value through designs." class="image-80" />
                     <div id="w-node-be693d80-b71e-117b-92a7-3f503d941375-f9b9fbd5">
                         <div id="w-node-d7804fc9-6627-7870-149c-7e93f9b9fbe5-f9b9fbd5" class="developed">Responsive
                             website designed and developed by Karma Tshering</div>
-                        <div id="w-node-_6eb137bd-fc29-e868-08fa-e4962fc1b0e0-f9b9fbd5" class="copyright">© 2024 Carmic
+                        <div id="w-node-_6eb137bd-fc29-e868-08fa-e4962fc1b0e0-f9b9fbd5" class="copyright">© 2025 Carmic
                             Design, All rights reserved</div>
                     </div>
                 </div>
