@@ -688,6 +688,93 @@
             opacity: .8;
         }
     </style>
+
+/* Match .ty-card sizing/centering context */
+.contact-ty-section .ty-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* Glass card look to match your Thank You card */
+.ty-card.contact-card {
+  /* sizing to mirror typical .ty-card footprint */
+  width: min(720px, 92%);
+  margin: 0 auto;
+  border-radius: 24px;
+
+  /* glassmorphism */
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  /* internal spacing similar to your cards */
+  padding: 24px 24px 28px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.20);
+}
+
+/* Respect site theme */
+#content.light-mode .ty-card.contact-card {
+  background: rgba(234, 222, 218, 0.18);            /* subtle warm tint like your palette */
+  border-color: rgba(49, 49, 89, 0.18);
+  box-shadow: 0 8px 24px rgba(49,49,89,0.12);
+}
+#content.dark-mode .ty-card.contact-card {
+  background: rgba(24, 24, 24, 0.32);
+  border-color: rgba(255,255,255,0.16);
+}
+
+/* Inputs: glassy, full-width, consistent spacing */
+.ty-card.contact-card .label {
+  display:block;
+  margin: 12px 0 6px;
+}
+.ty-card.contact-card .contact-input {
+  width: 100% !important;
+  max-width: 100% !important;
+  display:block;
+  box-sizing: border-box;
+
+  color: inherit;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 14px;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color .2s, background .2s, box-shadow .2s;
+}
+#content.light-mode .ty-card.contact-card .contact-input {
+  background: rgba(255,255,255,0.35);
+  border-color: rgba(49,49,89,0.18);
+}
+.ty-card.contact-card .contact-input:focus {
+  border-color: rgba(255,255,255,0.55);
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.18) inset;
+}
+
+/* Button: match your w-button but full-width on mobile */
+.ty-card.contact-card .contact-button {
+  width: 100%;
+  padding: 14px 16px;
+  margin-top: 14px;
+  border-radius: 14px;
+}
+
+/* Honeypot hidden but present for bots */
+.ty-card.contact-card .hp {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+}
+
+/* Responsive polish */
+@media (max-width: 767px) {
+  .ty-card.contact-card { padding: 20px 16px 24px; }
+}
+
+    
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="js/script.js"></script>
 </head>
@@ -1170,8 +1257,8 @@ I bring value through designs." class="image-80" />
                                 editing, and animation. Additionally, he is a fast learner who quickly adapts to new
                                 technology, ensuring that every learning experience is enjoyable.</div>
                             <div class="testimonialname">Rose Ciccarelli</div>
-                            <div class="text-block-2">Content Manager</div>
-                            <div class="text-block-2">Ethos CRS</div>
+                            <div class="text-block-2">Content Writer</div>
+                            <div class="text-block-2">Future Theory</div>
                         </div>
                     </div>
                 </div>
@@ -1188,6 +1275,84 @@ I bring value through designs." class="image-80" />
             </div>
         </div>
     </div>
+
+<!-- Contact (glass card), same size/look as .ty-card -->
+<section id="home-contact" class="contact-ty-section">
+  <div class="container w-container">
+    <div class="containerspaced">
+      <div class="ty-wrapper">
+        <div class="ty-card contact-card" role="form" aria-labelledby="home-contact-title">
+          <h2 id="home-contact-title" class="ty" style="margin-bottom:10px;">Get in touch</h2>
+
+          <form id="home-contact-form" class="w-form">
+            <label for="hc-name" class="label">Your Name</label>
+            <input id="hc-name" name="name" type="text" class="textinput w-input contact-input" placeholder="Enter your full name" required>
+
+            <label for="hc-email" class="label">Email Address</label>
+            <input id="hc-email" name="email" type="email" class="textinput w-input contact-input" placeholder="Enter your email address" required>
+
+            <label for="hc-message" class="label">Message</label>
+            <textarea id="hc-message" name="message" rows="6" class="textarea w-input contact-input" placeholder="Enter your message here" required></textarea>
+
+            <!-- Honeypot -->
+            <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <button type="submit" class="submit-button w-button contact-button">Send</button>
+            <p id="home-contact-status" class="thanksbody" aria-live="polite" style="margin-top:10px;"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <script>
+  const FORM_URL = "PASTE_YOUR_LAMBDA_FUNCTION_URL_HERE"; // e.g. https://abcde.lambda-url.ap-southeast-2.on.aws/
+
+  const hcForm = document.getElementById("home-contact-form");
+  const hcStatus = document.getElementById("home-contact-status");
+
+  if (hcForm && hcStatus) {
+    hcForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      hcStatus.textContent = "Sending…";
+
+      const fd = new FormData(hcForm);
+      // honeypot
+      if ((fd.get("company") || "").trim() !== "") {
+        hcStatus.textContent = "Thanks!";
+        hcForm.reset();
+        return;
+      }
+
+      const payload = {
+        name: fd.get("name"),
+        email: fd.get("email"),
+        message: fd.get("message")
+      };
+
+      try {
+        const res = await fetch(FORM_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        const body = await res.json().catch(() => ({}));
+        if (res.ok && body.ok) {
+          hcStatus.textContent = "Message sent. I’ll get back to you soon!";
+          hcForm.reset();
+        } else {
+          hcStatus.textContent = body?.error || "Failed to send. Please try again later.";
+        }
+      } catch {
+        hcStatus.textContent = "Network error. Please try again.";
+      }
+    });
+  }
+</script>
+
+    
     <footer class="footer">
         <div class="footercontainer w-container">
             <div class="containerspaced">
@@ -1217,7 +1382,7 @@ I bring value through designs." class="image-80" />
                     <div id="w-node-be693d80-b71e-117b-92a7-3f503d941375-f9b9fbd5">
                         <div id="w-node-d7804fc9-6627-7870-149c-7e93f9b9fbe5-f9b9fbd5" class="developed">Responsive
                             website designed and developed by Karma Tshering</div>
-                        <div id="w-node-_6eb137bd-fc29-e868-08fa-e4962fc1b0e0-f9b9fbd5" class="copyright">© 2024 Carmic
+                        <div id="w-node-_6eb137bd-fc29-e868-08fa-e4962fc1b0e0-f9b9fbd5" class="copyright">© 2025 Carmic
                             Design, All rights reserved</div>
                     </div>
                 </div>
