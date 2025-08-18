@@ -845,13 +845,26 @@
   opacity: 0.95;
 }
 
+    const setStatus = (mode, text) => {
+  hcStatus.textContent = text;
+  hcStatus.classList.remove('info','ok','err');
+  if (mode) hcStatus.classList.add(mode);
+};
+
+// Example calls in your current code:
+setStatus('info', 'Sending…');
+// on success:
+setStatus('ok', "Message sent. I’ll get back to you soon!");
+// on error:
+setStatus('err', body?.error || `Failed to send (${res.status}). Please try again.`);
+
 /* Theme tweaks */
 #content.dark-mode #home-contact-status { color: #eadeda; }
 
 /* Optional state colors */
 #home-contact-status.info { color: #6b7280; }   /* neutral */
 #home-contact-status.ok   { color: #16a34a; }   /* green */
-#home-contact-status.err  { color: #dc2626; }   /* red */
+#home-contact-status.err  { color: #f90043; }   /* red */
 
 
 </style>
