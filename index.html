@@ -792,38 +792,49 @@
   .glass-card{ padding:20px 16px 24px; }
 }
 
-    /* Gradient border for inputs */
-.glass-card .contact-input {
-  position: relative;
-  z-index: 1;
-  background-clip: padding-box; /* keep background inside border */
-  border: 2px solid transparent; /* make room for gradient border */
+/* --- Gradient border for inputs & textarea --- */
+:root {
+  /* tweak these to your brand */
+  --contact-grad: linear-gradient(90deg, #ff6a00 0%, #ee0979 50%, #7b61ff 100%);
+}
+
+/* Base (keeps the glass fill, adds gradient stroke) */
+.contact-ty-section .contact-input {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 2px solid transparent;          /* key: transparent border to reveal gradient */
   border-radius: 14px;
-  background: 
-    linear-gradient(90deg, #ff6a00, #ee0979) border-box, /* gradient border */
-    rgba(255, 255, 255, 0.12) padding-box;               /* glassy fill */
+  background:
+    linear-gradient(to bottom, rgba(255,255,255,0.72), rgba(255,255,255,0.72)) padding-box,  /* inside fill */
+    var(--contact-grad) border-box;        /* gradient stroke */
   color: inherit;
+  transition: box-shadow .2s, background .2s, border-color .2s;
 }
 
-/* Light mode: more frosted fill */
-#content.light-mode .glass-card .contact-input {
-  background: 
-    linear-gradient(90deg, #ff6a00, #ee0979) border-box,
-    rgba(255, 255, 255, 0.65) padding-box;
+/* Dark mode: subtler inner fill so it still “reads” */
+#content.dark-mode .contact-ty-section .contact-input {
+  background:
+    linear-gradient(to bottom, rgba(255,255,255,0.12), rgba(255,255,255,0.12)) padding-box,
+    var(--contact-grad) border-box;
 }
 
-/* Dark mode: darker frosted fill */
-#content.dark-mode .glass-card .contact-input {
-  background: 
-    linear-gradient(90deg, #ff6a00, #ee0979) border-box,
-    rgba(30, 30, 30, 0.45) padding-box;
-}
-
-/* On focus, make the gradient border glow */
-.glass-card .contact-input:focus {
+/* Focus: slight glow so the active field pops */
+.contact-ty-section .contact-input:focus {
   outline: none;
-  box-shadow: 0 0 10px rgba(255, 106, 0, 0.6), 0 0 20px rgba(238, 9, 121, 0.6);
+  box-shadow: 0 0 0 3px rgba(255,255,255,.18) inset, 0 0 16px rgba(123,97,255,.28);
 }
+
+/* Placeholders (tune if you like) */
+#content.light-mode .contact-ty-section .contact-input::placeholder { color: #4d4d4d; }
+#content.dark-mode  .contact-ty-section .contact-input::placeholder { color: rgba(255,255,255,.75); }
+
+/* Optional: hover “lift” */
+@media (hover:hover) {
+  .contact-ty-section .contact-input:hover {
+    box-shadow: 0 2px 16px rgba(0,0,0,.12);
+  }
+}
+
 
 </style>
 
