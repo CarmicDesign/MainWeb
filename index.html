@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-wf-page="640903c036b65f114a3a5c3a" data-wf-site="640903c036b65f1a203a5c3b" data-wf-status="1">
 
 <head>
     <meta charset="utf-8" />
@@ -18,7 +18,7 @@
     <script type="text/javascript">window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-K0EF4D5TV4', { 'anonymize_ip': true });</script>
 
     <style>
-        /* Reset and ensure scrollable layout */
+        /* Ensuring body and html take full height and overflow correctly */
         body, html {
             margin: 0;
             padding: 0;
@@ -33,7 +33,13 @@
             height: 100%;
         }
 
-        /* Simplify container and content structure */
+        /* Body wrapper, ensures content is scrollable */
+        .bodywrap, .bodywrap2 {
+            min-height: 100vh;  /* make sure body content fills the screen */
+            overflow: auto;     /* allow scroll on content overflow */
+        }
+
+        /* Ensuring sections and content can grow and scroll on mobile */
         .container {
             width: 100%;
             max-width: 1200px;
@@ -41,10 +47,19 @@
             padding: 20px;
         }
 
-        /* Ensure all sections can scroll */
-        .bodywrap, .bodywrap2 {
-            min-height: 100vh;  /* make sure body content fills the screen */
-            overflow: auto;     /* allow scroll on content overflow */
+        .section {
+            margin-bottom: 60px;
+        }
+
+        /* Theme Styles for light and dark modes are kept as per your request */
+        #content.light-mode {
+            background-color: #ffffff;
+            color: #181818;
+        }
+
+        #content.dark-mode {
+            background-color: #181818;
+            color: #ffffff;
         }
 
         /* Navigation styles */
@@ -70,6 +85,7 @@
             perspective: initial !important;
         }
 
+        /* Contact input fields */
         .contact-input {
             width: 100%;
             max-width: 100%;
@@ -119,29 +135,26 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>Welcome to My Digital Portfolio</h1>
-        <p>This is my redesigned digital portfolio. Feel free to browse my work and get in touch!</p>
-        <section class="section" id="Profile">
-            <div class="profile-section">
-                <img src="images/picture-202.png" alt="Profile Picture" class="hero-image" />
-                <h2>About Me</h2>
-                <p>I bring value through designs and creative solutions. Let’s create something beautiful together!</p>
+    <div id="Profile" class="section">
+        <div class="container">
+            <div class="profilepicbox">
+                <img src="images/picture-202.png" loading="lazy" alt="Profile Picture" class="hero-image" />
+                <div class="introtextwrapper">
+                    <img src="images/herotext2.svg" loading="lazy" alt="Hi, I'm Karma Tshering I bring value through designs." class="image-80" />
+                </div>
             </div>
-        </section>
-
-        <!-- Other sections like "Projects", "Me", etc. will go here. -->
-
+        </div>
     </div>
 
     <footer class="footer">
-        <div class="footercontainer">
+        <div class="footercontainer w-container">
             <p>© 2025 Carmic Design, All rights reserved</p>
         </div>
     </footer>
 
     <script src="js/jquery.js" type="text/javascript"></script>
     <script src="js/webflow-script.js" type="text/javascript"></script>
+
 </body>
 
 </html>
