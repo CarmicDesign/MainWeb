@@ -845,29 +845,13 @@
   opacity: 0.95;
 }
 
-    const setStatus = (mode, text) => {
-  hcStatus.textContent = text;
-  hcStatus.classList.remove('info','ok','err');
-  if (mode) hcStatus.classList.add(mode);
-};
+/* Theme tweaks */
+#content.dark-mode #home-contact-status { color: #eadeda; }
 
-// Example calls in your current code:
-setStatus('info', 'Sending…');
-// on success:
-setStatus('ok', "Message sent. I’ll get back to you soon!");
-// on error:
-setStatus('err', body?.error || `Failed to send (${res.status}). Please try again.`);
-
-/* Base theming */
-html.dark-mode  { background: #0b0b0c; color: #e6e6e6; }
-html.light-mode { background: #ffffff; color: #111827; }
-
-/* Your previous selectors, but rooted on html */
-html.dark-mode  #home-contact-status:not(.info):not(.ok):not(.err) { color: #eadeda; }
-#home-contact-status.info { color: #6b7280; }
-#home-contact-status.ok   { color: #16a34a; }
-#home-contact-status.err  { color: #f90043; }
-
+/* Optional state colors */
+#home-contact-status.info { color: #6b7280; }   /* neutral */
+#home-contact-status.ok   { color: #16a34a; }   /* green */
+#home-contact-status.err  { color: #dc2626; }   /* red */
 
 
 </style>
@@ -1447,49 +1431,34 @@ I bring value through designs." class="image-80" />
     </footer>
     <script src="js/jquery.js" type="text/javascript"></script>
     <script src="js/webflow-script.js" type="text/javascript"></script>
+    <script>
+        function setThemeFromCookie() {
+            var themeState = document.getElementById('content');
+            themeState.className = isThemeSelected() ? 'dark-mode' : 'light-mode';
+        }
 
-   <script>
-(function () {
-  const ROOT = document.documentElement; // <html>
-  const SWITCH_ID = 'toggleTheme';
-  const COOKIE = 'theme';
+        function setThemeSwitchState() {
+            document.getElementById('toggleTheme').checked = isThemeSelected();
+        }
 
-  function readTheme() {
-    return (document.cookie.match(/(?:^|;\s*)theme=(dark|light)\b/i)?.[1] || 'light').toLowerCase();
-  }
-  function writeTheme(theme) {
-    document.cookie = `${COOKIE}=${theme}; max-age=31536000; path=/; SameSite=Lax`;
-  }
-  function applyTheme(theme) {
-    ROOT.classList.toggle('dark-mode',  theme === 'dark');
-    ROOT.classList.toggle('light-mode', theme === 'light');
-    const sw = document.getElementById(SWITCH_ID);
-    if (sw) sw.checked = (theme === 'dark');
-  }
-  function toggleTheme() {
-    const next = ROOT.classList.contains('dark-mode') ? 'light' : 'dark';
-    applyTheme(next);
-    writeTheme(next);
-  }
+        function isThemeSelected() {
+            return document.cookie.match(/theme=dark/i) != null;
+        }
 
-  function init() {
-    applyTheme(readTheme());
-    const sw = document.getElementById(SWITCH_ID);
-    if (sw && !sw.dataset._themeBound) {
-      sw.addEventListener('change', toggleTheme);
-      sw.dataset._themeBound = '1';
-    }
-  }
+        function toggleTheme() {
+            var themeState = document.getElementById('content');
+            var currentState = themeState.className;
+            var newState = themeState.className == 'dark-mode' ? 'light-mode' : 'dark-mode';
+            themeState.className = newState;
+            document.cookie = 'theme=' + (newState == 'light-mode' ? 'light' : 'dark');
+        }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-})();
-</script>
-
-
+        (function () {
+            setThemeFromCookie();
+            setThemeSwitchState();
+            document.getElementById('toggleTheme').onchange = toggleTheme;
+        })();
+    </script>
 
 <script>
   // LIVE mode (no mock)
