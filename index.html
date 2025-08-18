@@ -1443,42 +1443,56 @@ I bring value through designs." class="image-80" />
     </script>
 
 <script>
-  // Demo-only: shows success without a backend. Flip MOCK_MODE to false and set FORM_URL later.
-  const MOCK_MODE = true;
-  const FORM_URL  = ""; // e.g. https://abcde.lambda-url.ap-southeast-2.on.aws/
+  // LIVE mode (no mock)
+  const MOCK_MODE = false;
+
+  // Paste your Lambda Function URL:
+  // e.g. https://abc123.lambda-url.ap-southeast-2.on.aws/
+  const FORM_URL = "https://YOUR-FUNCTION-ID.lambda-url.ap-southeast-2.on.aws/";
 
   const hcForm   = document.getElementById("home-contact-form");
   const hcStatus = document.getElementById("home-contact-status");
+  const submitBtn = hcForm?.querySelector(".contact-button") || hcForm?.querySelector('button[type="submit"]');
+
+  const setBusy = (busy) => {
+    if (!submitBtn) return;
+    submitBtn.disabled = busy;
+    submitBtn.textContent = busy ? "Sending…" : "Send";
+  };
 
   if (hcForm && hcStatus) {
     hcForm.addEventListener("submit", async (e) => {
       e.preventDefault();
-      hcStatus.textContent = "Sending…";
+      hcStatus.textContent = "";
+      setBusy(true);
 
       const fd = new FormData(hcForm);
 
-      // honeypot
+      // Honeypot
       if ((fd.get("company") || "").trim() !== "") {
         hcStatus.textContent = "Thanks!";
         hcForm.reset();
-        return;
-      }
-
-      const payload = {
-        name: (fd.get("name") || "").toString().trim(),
-        email: (fd.get("email") || "").toString().trim(),
-        message: (fd.get("message") || "").toString().trim()
-      };
-      if (!payload.name || !payload.email || !payload.message) {
-        hcStatus.textContent = "Please fill in all fields.";
+        setBusy(false);
         return;
       }
 
       if (MOCK_MODE) {
-        setTimeout(() => {
-          hcStatus.textContent = "Message sent (demo). I’ll get back to you soon!";
-          hcForm.reset();
-        }, 600);
+        await new Promise(r => setTimeout(r, 600));
+        hcStatus.textContent = "Message sent. I’ll get back to you soon!";
+        hcForm.reset();
+        setBusy(false);
+        return;
+      }
+
+      const payload = {
+        name:    fd.get("name"),
+        email:   fd.get("email"),
+        message: fd.get("message")
+      };
+
+      if (!payload.name || !payload.email || !payload.message) {
+        hcStatus.textContent = "Please fill in all fields.";
+        setBusy(false);
         return;
       }
 
@@ -1489,18 +1503,22 @@ I bring value through designs." class="image-80" />
           body: JSON.stringify(payload)
         });
         const body = await res.json().catch(() => ({}));
+
         if (res.ok && body.ok) {
           hcStatus.textContent = "Message sent. I’ll get back to you soon!";
           hcForm.reset();
         } else {
-          hcStatus.textContent = body?.error || "Failed to send. Please try again later.";
+          hcStatus.textContent = body?.error || `Failed to send (${res.status}). Please try again.`;
         }
       } catch {
         hcStatus.textContent = "Network error. Please try again.";
+      } finally {
+        setBusy(false);
       }
     });
   }
 </script>
+
 
     
 </body>
